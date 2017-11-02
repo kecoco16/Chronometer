@@ -11,7 +11,8 @@ function cronometro () {
       minutos--
       segundos = 60
     }
-    console.log(minutos + ':' +segundos)  
+    let updateSeconds = (segundos < 10) ? '0' + segundos.toString() : segundos
+    console.log(minutos + ':' + updateSeconds)
   }
 }, 1000);
 }
