@@ -1,20 +1,22 @@
-function cronometro(min) {
-  let segundos = 60
-  let minutos = min - 1
-  let count = setInterval(function () {
-    segundos--
-    if (segundos == 0 && minutos == 0) {
+const chronometer = min => printTime(min)
+
+const printTime = initialMin => {
+  let sec = 60
+  let min = initialMin-1
+  const print = setInterval(() => {
+    sec--
+    if (sec === 0 && min === 0) {
       console.log('se acabo el tiempo')
       clearInterval(count)
     }
-
-    if (segundos == -1) {
-      minutos--
-      segundos = 59
+    if (sec === -1) {
+      min--
+      sec = 59
     }
-
-    let updateSeconds = (segundos < 10) ? '0' + segundos.toString() : segundos
-    console.log(minutos + ':' + updateSeconds)
-  }, 1000);
+    console.log(min + ':' + formaterSeconds(sec))
+  }, 1000)
 }
-cronometro(10)
+
+const formaterSeconds = sec => sec < 10 ? '0' + sec.toString() : sec
+
+chronometer(10)
