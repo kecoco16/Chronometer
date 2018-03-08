@@ -42,7 +42,7 @@ componentDidMount () {
       this.setState({sec: 59})
     }
     this.setState({
-      chrono: `${this.state.min} : ${this.state.sec < 10 ? '0' his.state.sec.toString() : this.state.sec} `
+      chrono: `${this.state.min} : ${this.state.sec < 10 ? '0' this.state.sec.toString() : this.state.sec} `
     })
   },1000)
 }
